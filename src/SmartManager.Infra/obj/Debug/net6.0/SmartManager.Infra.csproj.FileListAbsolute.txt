@@ -1,0 +1,5 @@
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Infra\obj\Debug\net6.0\SmartManager.Infra.csproj.AssemblyReference.cache
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Infra\obj\Debug\net6.0\SmartManager.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Infra\obj\Debug\net6.0\SmartManager.Infra.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Infra\obj\Debug\net6.0\SmartManager.Infra.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Infra\obj\Debug\net6.0\SmartManager.Infra.csproj.CoreCompileInputs.cache
