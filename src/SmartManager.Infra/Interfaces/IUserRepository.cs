@@ -1,4 +1,5 @@
 using SmartManager.Domain.Entities;
+using SmartManger.Infra.Interfaces;
 
 namespace SmartManager.Infra.Interfaces 
 {
