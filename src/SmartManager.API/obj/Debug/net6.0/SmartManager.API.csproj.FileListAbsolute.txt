@@ -21,8 +21,8 @@ C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Sm
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Domain.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Infra.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Services.dll
-C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Services.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Core.pdb
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Services.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Domain.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Infra.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\obj\Debug\net6.0\SmartManager.API.csproj.AssemblyReference.cache
@@ -41,3 +41,7 @@ C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\obj\Debug\net6.0\re
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\obj\Debug\net6.0\SmartManager.API.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\obj\Debug\net6.0\SmartManager.API.genruntimeconfig.cache
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\obj\Debug\net6.0\ref\SmartManager.API.dll
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SmartManager.API.Requests
+namespace SmartManager.Services.Requests
 {
     public class createUserRequest {
         [Required]

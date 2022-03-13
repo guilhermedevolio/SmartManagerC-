@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SmartManager.Core.Exceptions;
 using SmartManager.Domain.Validators;
 
 namespace SmartManager.Domain.Entities {
@@ -45,7 +46,7 @@ namespace SmartManager.Domain.Entities {
                     _errors.Add(error.ErrorMessage);
                 }
 
-                throw new Exception("Campos Inv�lidos" + _errors[0]);
+                throw new DomainException("Campos Inv�lidos" + _errors[0]);
             }
 
             return true;

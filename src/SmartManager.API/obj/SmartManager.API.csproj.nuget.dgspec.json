@@ -151,7 +151,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Core\\SmartManager.Core.csproj": {
+                "projectPath": "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Core\\SmartManager.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -312,6 +316,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.16.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.16.0, )"
+            },
             "automapper": {
               "target": "Package",
               "version": "[11.0.1, )"

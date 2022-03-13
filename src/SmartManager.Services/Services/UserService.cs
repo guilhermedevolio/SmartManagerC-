@@ -34,7 +34,7 @@ namespace SmartManager.Services.Services
             }
 
             var createUser = await _repository.Create(_mapper.Map<User>(userDTO));
-
+            
             return _mapper.Map<UserDTO>(createUser);
         }
     }

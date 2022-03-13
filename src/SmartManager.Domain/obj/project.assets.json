@@ -10,6 +10,16 @@
         "runtime": {
           "lib/net6.0/FluentValidation.dll": {}
         }
+      },
+      "SmartManager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SmartManager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartManager.Core.dll": {}
+        }
       }
     }
   },
@@ -34,10 +44,16 @@
         "lib/netstandard2.1/FluentValidation.dll",
         "lib/netstandard2.1/FluentValidation.xml"
       ]
+    },
+    "SmartManager.Core/1.0.0": {
+      "type": "project",
+      "path": "../SmartManager.Core/SmartManager.Core.csproj",
+      "msbuildProject": "../SmartManager.Core/SmartManager.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "SmartManager.Core >= 1.0.0",
       "fluentValidation >= 10.4.0"
     ]
   },
@@ -67,7 +83,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Core\\SmartManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Core\\SmartManager.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

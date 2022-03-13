@@ -7,7 +7,7 @@ using AutoMapper;
 using SmartManager.Services.DTOS;
 using SmartManager.Infra.Context;
 using Microsoft.EntityFrameworkCore;
-using SmartManager.API.Requests;
+using SmartManager.Services.Requests;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,12 +22,15 @@ var autoMapperConfig = new MapperConfiguration(cfg =>
 {
     cfg.CreateMap<User, UserDTO>().ReverseMap();
     cfg.CreateMap<UserDTO, createUserRequest>().ReverseMap();
+    cfg.CreateMap<UserDTO, AuthenticateRequest>().ReverseMap();
 });
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 
 builder.Services.AddDbContext<SmartManagerContext>(options => options

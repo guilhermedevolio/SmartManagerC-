@@ -1,9 +1,9 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using SmartManager.API.Requests;
 using SmartManager.Core.Exceptions;
 using SmartManager.Services.DTOS;
 using SmartManager.Services.Interfaces;
+using SmartManager.Services.Requests;
 using SmartManager.Services.Services;
 
 namespace SmartManager.API.Controllers

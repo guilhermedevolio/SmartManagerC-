@@ -1,13 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\SmartManager.Domain\SmartManager.Domain.csproj" />
-    <ProjectReference Include="..\SmartManager.Infra\SmartManager.Infra.csproj" />
-    <ProjectReference Include="..\SmartManager.Core\SmartManager.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="automapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.16.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -15,5 +11,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+    <ItemGroup>
+    <ProjectReference Include="..\SmartManager.Domain\SmartManager.Domain.csproj" />
+    <ProjectReference Include="..\SmartManager.Infra\SmartManager.Infra.csproj" />
+    <ProjectReference Include="..\SmartManager.Core\SmartManager.Core.csproj" />
+  </ItemGroup>
+
 
 </Project>

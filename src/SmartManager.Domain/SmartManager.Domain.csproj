@@ -9,4 +9,8 @@
   <ItemGroup>
     <PackageReference Include="fluentValidation" Version="10.4.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartManager.Core\SmartManager.Core.csproj" />
+  </ItemGroup>
 </Project>
