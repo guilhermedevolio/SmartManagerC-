@@ -17,11 +17,11 @@ namespace SmartManager.Services.Services
             _mapper = mapper;
         }
 
-        public async Task<List<UserDTO>> SearchByEmail(string email)
+        public async Task<UserDTO> SearchByEmail(string email)
         {
             var user = await _repository.GetByEmail(email);
 
-            return _mapper.Map<List<UserDTO>>(user);
+            return _mapper.Map<UserDTO>(user);
         }
     }
 }

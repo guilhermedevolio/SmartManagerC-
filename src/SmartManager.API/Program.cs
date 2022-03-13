@@ -18,9 +18,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var autoMapperConfig = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<User, UserDTO>().ReverseMap();
-            });
+{
+    cfg.CreateMap<User, UserDTO>().ReverseMap();
+});
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 
