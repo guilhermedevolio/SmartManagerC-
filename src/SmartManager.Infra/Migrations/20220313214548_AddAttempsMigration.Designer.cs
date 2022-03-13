@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartManager.Infra.Context;
 
@@ -11,9 +12,10 @@ using SmartManager.Infra.Context;
 namespace SmartManager.Infra.Migrations
 {
     [DbContext(typeof(SmartManagerContext))]
-    partial class SmartManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20220313214548_AddAttempsMigration")]
+    partial class AddAttempsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

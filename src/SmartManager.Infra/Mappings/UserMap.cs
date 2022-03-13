@@ -35,6 +35,24 @@ namespace SmartManager.Infra.Mappings
                    .HasColumnName("password")
                    .HasColumnType("VARCHAR(255)");
 
+            builder.Property(x => x.Role)
+                   .IsRequired()
+                   .HasDefaultValue("User")
+                   .HasMaxLength(255)
+                   .HasColumnName("role")
+                   .HasColumnType("VARCHAR(255)");
+
+             builder.Property(x => x.AccessAttempts)
+                   .IsRequired()
+                   .HasDefaultValue(0)
+                   .HasMaxLength(255)
+                   .HasColumnName("access_attempts")
+                   .HasColumnType("BIGINT");
+
+              builder.Property(x => x.UnlockDate)
+                   .HasColumnName("unlock_date")
+                   .HasColumnType("datetime");
+
         }
     }
 }

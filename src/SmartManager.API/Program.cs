@@ -18,11 +18,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.AddDbContext<SmartManagerContext>(options => options
+                .UseMySql("Server=localhost;Database=SmartManager;Uid=root;Pwd=;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.25-mysql")));
+
+
+
+
 var autoMapperConfig = new MapperConfiguration(cfg =>
 {
     cfg.CreateMap<User, UserDTO>().ReverseMap();
     cfg.CreateMap<UserDTO, createUserRequest>().ReverseMap();
     cfg.CreateMap<UserDTO, AuthenticateRequest>().ReverseMap();
+    cfg.CreateMap<User, AuthenticateRequest>().ReverseMap();
 });
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
@@ -31,11 +39,6 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
-
-
-builder.Services.AddDbContext<SmartManagerContext>(options => options
-                .UseMySql("Server=localhost;Database=SmartManager;Uid=root;Pwd=;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.25-mysql")));
-
 
 
 var app = builder.Build();

@@ -2,7 +2,6 @@ using AutoMapper;
 using SmartManager.Core.Exceptions;
 using SmartManager.Domain.Entities;
 using SmartManager.Infra.Interfaces;
-using SmartManager.Infra.Repositories;
 using SmartManager.Services.DTOS;
 using SmartManager.Services.Interfaces;
 

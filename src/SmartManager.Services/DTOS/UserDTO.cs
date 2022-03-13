@@ -12,15 +12,25 @@ namespace SmartManager.Services.DTOS
         [JsonIgnore]
         public string ?Password { get;  set; } 
 
+        [JsonIgnore]
+        public string ?Role { get;  set; } 
+
+       [JsonIgnore]
+        public int ?AccessAttempts { get; private set; } 
+
+       [JsonIgnore]
+        public DateTime ?UnlockDate { get; private set; }
+
         public UserDTO()
         {}
 
-        public UserDTO(long id, string? name, string? email, string? password)
+        public UserDTO(long id, string? name, string? email, string? password, string? role)
         {
             Id = id;
             Name = name;
             Email = email;
             Password = password;
+            Role = role;
         }
     }
 }

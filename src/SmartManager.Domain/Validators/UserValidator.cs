@@ -28,6 +28,12 @@ namespace SmartManager.Domain.Validators
                .WithMessage("A senha n�o pode ser nulo")
                .NotEmpty()
                .WithMessage("A senha n�o pode ser vazio");
+
+            RuleFor(x => x.Role)
+               .NotNull()
+               .WithMessage("A role não pode ser nula")
+               .NotEmpty()
+               .WithMessage("A role não pode ser nula");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace SmartManager.Services.Services
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                    new Claim(ClaimTypes.Name, user.Email),
-                   new Claim(ClaimTypes.Role, "User")
+                   new Claim(ClaimTypes.Role, user.Role)
                 }),
 
                 Expires = expiresAt,

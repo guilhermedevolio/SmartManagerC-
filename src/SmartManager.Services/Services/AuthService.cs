@@ -25,20 +25,44 @@ namespace SmartManager.Services.Services
 
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
         {
-            var user = await _repository.GetByEmail(request.Email);
+            var UserDTO = _mapper.Map<User>(request);
+
+            var user = await _repository.GetByEmail(UserDTO.Email);
 
             if(user == null) {
                 throw new DomainException("Usuário não encontrado com o email informado");
             }
 
-            if(request.Password != user.Password) {
-                throw new DomainException("Senha incorreta");
+            if(user.IsBlocked) {
+                throw new DomainException("Conta bloqueada, tente novamente em alguns minutos");
             }
 
-            var token = _tokenService.GenerateToken(_mapper.Map<UserDTO>(request));
+            var attemps = user.AccessAttempts;
 
+            if(request.Password == user.Password) {
+                var token = _tokenService.GenerateToken(_mapper.Map<UserDTO>(request));
 
-            return new AuthenticateResponse(0, token);
+                return new AuthenticateResponse(0, token);
+            }
+
+            attemps++;
+            // Adiciona uma tentativa de erro
+            user.changeAccessAttempts(attemps);
+
+            if(attemps >= 3){
+                user.changeAccessAttempts(0);
+
+                if(!user.IsBlocked) {
+                    user.changeUnlockDate(DateTime.Now.AddMinutes(10));
+                }
+
+                await _repository.Update(user);
+                throw new DomainException("Conta bloqueada, tente novamente em alguns minutos" + DateTime.Now);
+            }
+
+            await _repository.Update(user);
+            
+            throw new DomainException("Senha incorreta");
 
         }
     }

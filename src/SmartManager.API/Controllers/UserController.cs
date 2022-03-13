@@ -37,9 +37,6 @@ namespace SmartManager.API.Controllers
                 Status = 0,
                 user
             });
-
-           
-            return Ok(user);
         }
 
         [HttpPost]

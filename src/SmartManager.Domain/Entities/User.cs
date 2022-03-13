@@ -11,14 +11,24 @@ namespace SmartManager.Domain.Entities {
         public string ?Email { get; private set; } 
 
         public string ?Password { get; private set; } 
+        public string ?Role { get; private set; } 
+        public int AccessAttempts { get; private set; } 
 
-        protected User() { }
+        public DateTime ?UnlockDate { get; private set; }
 
-        public User(string ?name, string ?email, string ?password)
+        public Boolean IsBlocked => UnlockDate > DateTime.Now;
+
+        protected User()
+        {
+         
+        }
+
+        public User(string? name, string? email, string? password, string? role = null)
         {
             Name = name;
             Email = email;
             Password = password;
+            Role = role;
             _errors = new List<String>();
         }
 
@@ -33,6 +43,25 @@ namespace SmartManager.Domain.Entities {
             this.Email = email;
             Validate();
         }
+
+        public void changeRole(string role)
+        {
+            this.Role = role;
+            Validate();
+        }
+
+        public void changeAccessAttempts(int attemps)
+        {
+            this.AccessAttempts = attemps;
+            Validate();
+        }
+
+        public void changeUnlockDate(DateTime time)
+        {
+            this.UnlockDate = time;
+            Validate();
+        }
+
 
         public override bool Validate()
         {
