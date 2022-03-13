@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using SmartManager.API.Response;
 using SmartManager.Core.Exceptions;
 using SmartManager.Domain.Entities;
@@ -16,11 +17,14 @@ namespace SmartManager.Services.Services
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
 
-        public AuthService(IUserRepository repository, IMapper mapper, ITokenService tokenService)
+        private readonly IConfiguration _config;
+
+        public AuthService(IUserRepository repository, IMapper mapper, ITokenService tokenService, IConfiguration config)
         {
             _repository = repository;
             _mapper = mapper;
             _tokenService = tokenService;
+            _config = config;
         }
 
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
@@ -34,10 +38,10 @@ namespace SmartManager.Services.Services
             }
 
             if(user.IsBlocked) {
-                throw new DomainException("Conta bloqueada, tente novamente em alguns minutos");
+                throw new DomainException("Conta bloqueada, tente novamente " + user.UnlockDate);
             }
 
-            var attemps = user.AccessAttempts;
+           
 
             if(request.Password == user.Password) {
                 var token = _tokenService.GenerateToken(_mapper.Map<UserDTO>(request));
@@ -45,22 +49,24 @@ namespace SmartManager.Services.Services
                 return new AuthenticateResponse(0, token);
             }
 
+            var attemps = user.AccessAttempts;
+            var maxAttempts = Int32.Parse(_config.GetSection("Auth").GetSection("maxAttempts").Value);
+
             attemps++;
-            // Adiciona uma tentativa de erro
             user.changeAccessAttempts(attemps);
 
-            if(attemps >= 3){
+            if(attemps >= maxAttempts)
+            {
                 user.changeAccessAttempts(0);
-
-                if(!user.IsBlocked) {
-                    user.changeUnlockDate(DateTime.Now.AddMinutes(10));
-                }
-
-                await _repository.Update(user);
-                throw new DomainException("Conta bloqueada, tente novamente em alguns minutos" + DateTime.Now);
+                var expiresTime = DateTime.Now.AddMinutes(Double.Parse(_config.GetSection("Auth").GetSection("expiresMinutes").Value));
+                user.changeUnlockDate(expiresTime);
             }
 
             await _repository.Update(user);
+
+            if(user.IsBlocked) {
+                throw new DomainException("Conta bloqueada, tente novamente " + user.UnlockDate);
+            }
             
             throw new DomainException("Senha incorreta");
 
