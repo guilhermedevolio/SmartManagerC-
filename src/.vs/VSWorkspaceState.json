@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SmartManager.API\\Controllers",
+    "\\SmartManager.Domain\\Entities",
+    "\\SmartManager.Domain\\Validators",
+    "\\SmartManager.Infra",
+    "\\SmartManager.Infra\\Interfaces"
+  ],
+  "SelectedNode": "\\SmartManager.Infra\\Interfaces\\IUserRepository.cs",
+  "PreviewInSolutionExplorer": false
+}

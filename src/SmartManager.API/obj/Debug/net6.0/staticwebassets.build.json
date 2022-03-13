@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dnYM/Bqw7yKC7EIwq0SZy6O3790ee3Q3ZDHvkdD1Owc=",
+  "Source": "SmartManager.API",
+  "BasePath": "_content/SmartManager.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

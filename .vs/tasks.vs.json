@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarefa-SmartManager",
+      "appliesTo": "src/SmartManager.Infra/",
+      "type": "launch"
+    }
+  ]
+}

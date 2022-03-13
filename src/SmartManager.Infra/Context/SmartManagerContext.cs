@@ -11,9 +11,6 @@ namespace SmartManager.Infra.Context
         public SmartManagerContext(DbContextOptions<SmartManagerContext> options) : base(options)
         {}
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            optionsBuilder.UseMySql("Server=localhost;Database=SmartManager;Uid=root;Pwd=;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.25-mysql"));
-        }
 
         public virtual DbSet<User> Users {get; set;}
 

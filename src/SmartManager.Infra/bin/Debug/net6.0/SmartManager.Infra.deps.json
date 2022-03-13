@@ -9,6 +9,7 @@
       "SmartManager.Infra/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.3",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.3",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.1",
           "SmartManager.Domain": "1.0.0"

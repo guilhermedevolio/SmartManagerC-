@@ -1,11 +1,11 @@
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\bin\Debug\net6.0\SmartManager.Domain.deps.json
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\bin\Debug\net6.0\SmartManager.Domain.dll
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\bin\Debug\net6.0\SmartManager.Domain.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\SmartManager.Domain.csproj.AssemblyReference.cache
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\SmartManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\SmartManager.Domain.AssemblyInfoInputs.cache
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\SmartManager.Domain.AssemblyInfo.cs
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\SmartManager.Domain.csproj.CoreCompileInputs.cache
-C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\bin\Debug\net6.0\SmartManager.Domain.deps.json
-C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\bin\Debug\net6.0\SmartManager.Domain.dll
-C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\bin\Debug\net6.0\SmartManager.Domain.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\SmartManager.Domain.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\refint\SmartManager.Domain.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.Domain\obj\Debug\net6.0\SmartManager.Domain.pdb
