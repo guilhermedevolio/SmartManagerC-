@@ -13,7 +13,7 @@ namespace SmartManager.Domain.Entities {
 
         protected User() { }
 
-        public User(string name, string email, string password)
+        public User(string ?name, string ?email, string ?password)
         {
             Name = name;
             Email = email;
@@ -45,7 +45,7 @@ namespace SmartManager.Domain.Entities {
                     _errors.Add(error.ErrorMessage);
                 }
 
-                throw new Exception("Campos Inválidos" + _errors[0]);
+                throw new Exception("Campos Invï¿½lidos" + _errors[0]);
             }
 
             return true;

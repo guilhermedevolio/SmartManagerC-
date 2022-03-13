@@ -270,6 +270,16 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "SmartManager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SmartManager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartManager.Core.dll": {}
+        }
+      },
       "SmartManager.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -805,6 +815,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "SmartManager.Core/1.0.0": {
+      "type": "project",
+      "path": "../SmartManager.Core/SmartManager.Core.csproj",
+      "msbuildProject": "../SmartManager.Core/SmartManager.Core.csproj"
+    },
     "SmartManager.Domain/1.0.0": {
       "type": "project",
       "path": "../SmartManager.Domain/SmartManager.Domain.csproj",
@@ -818,6 +833,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "SmartManager.Core >= 1.0.0",
       "SmartManager.Domain >= 1.0.0",
       "SmartManager.Infra >= 1.0.0",
       "automapper >= 11.0.1"
@@ -850,6 +866,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Core\\SmartManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Core\\SmartManager.Core.csproj"
+            },
             "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Domain\\SmartManager.Domain.csproj": {
               "projectPath": "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.Domain\\SmartManager.Domain.csproj"
             },

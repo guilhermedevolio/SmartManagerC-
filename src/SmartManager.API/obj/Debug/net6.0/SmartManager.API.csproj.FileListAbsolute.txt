@@ -17,10 +17,12 @@ C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Po
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Core.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Domain.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Infra.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Services.dll
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Services.pdb
+C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Core.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Domain.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\bin\Debug\net6.0\SmartManager.Infra.pdb
 C:\Users\Guilherme\Desktop\SmartManager\src\SmartManager.API\obj\Debug\net6.0\SmartManager.API.csproj.AssemblyReference.cache

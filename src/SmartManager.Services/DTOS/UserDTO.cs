@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace SmartManager.Services.DTOS
 {
     public class UserDTO {
@@ -7,6 +9,7 @@ namespace SmartManager.Services.DTOS
 
         public string ?Email { get;  set; } 
 
+        [JsonIgnore]
         public string ?Password { get;  set; } 
 
         public UserDTO()

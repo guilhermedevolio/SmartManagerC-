@@ -4,5 +4,6 @@ namespace SmartManager.Services.Interfaces
 {
     public interface IUserService {
         Task<UserDTO> SearchByEmail(string email); 
+        Task<UserDTO> CreateAsync(UserDTO userDTO); 
     }
 }

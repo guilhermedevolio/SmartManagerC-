@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "SmartManager.Services/1.0.0": {
         "dependencies": {
+          "SmartManager.Core": "1.0.0",
           "SmartManager.Domain": "1.0.0",
           "SmartManager.Infra": "1.0.0",
           "AutoMapper": "11.0.1"
@@ -209,6 +210,11 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "SmartManager.Core/1.0.0": {
+        "runtime": {
+          "SmartManager.Core.dll": {}
+        }
+      },
       "SmartManager.Domain/1.0.0": {
         "dependencies": {
           "FluentValidation": "10.4.0"
@@ -382,6 +388,11 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "SmartManager.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "SmartManager.Domain/1.0.0": {
       "type": "project",

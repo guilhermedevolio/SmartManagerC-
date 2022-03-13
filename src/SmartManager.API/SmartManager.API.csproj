@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartManager.Services\SmartManager.Services.csproj" />
+    <ProjectReference Include="..\SmartManager.Core\SmartManager.Core.csproj" />
   </ItemGroup>
 
 </Project>

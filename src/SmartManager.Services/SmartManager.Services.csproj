@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SmartManager.Domain\SmartManager.Domain.csproj" />
     <ProjectReference Include="..\SmartManager.Infra\SmartManager.Infra.csproj" />
+    <ProjectReference Include="..\SmartManager.Core\SmartManager.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

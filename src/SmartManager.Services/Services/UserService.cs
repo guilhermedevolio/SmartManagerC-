@@ -1,4 +1,6 @@
 using AutoMapper;
+using SmartManager.Core.Exceptions;
+using SmartManager.Domain.Entities;
 using SmartManager.Infra.Interfaces;
 using SmartManager.Infra.Repositories;
 using SmartManager.Services.DTOS;
@@ -22,6 +24,18 @@ namespace SmartManager.Services.Services
             var user = await _repository.GetByEmail(email);
 
             return _mapper.Map<UserDTO>(user);
+        }
+
+        public async Task<UserDTO> CreateAsync(UserDTO userDTO) {
+            var userExists = await _repository.GetByEmail(userDTO.Email);
+
+            if(userExists != null) {
+                throw new DomainException("O email informado já existe");
+            }
+
+            var createUser = await _repository.Create(_mapper.Map<User>(userDTO));
+
+            return _mapper.Map<UserDTO>(createUser);
         }
     }
 }

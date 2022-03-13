@@ -7,6 +7,7 @@ using AutoMapper;
 using SmartManager.Services.DTOS;
 using SmartManager.Infra.Context;
 using Microsoft.EntityFrameworkCore;
+using SmartManager.API.Requests;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Services.AddSwaggerGen();
 var autoMapperConfig = new MapperConfiguration(cfg =>
 {
     cfg.CreateMap<User, UserDTO>().ReverseMap();
+    cfg.CreateMap<UserDTO, createUserRequest>().ReverseMap();
 });
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
