@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using SmartManager.Core.Exceptions;
 using SmartManager.Domain.Validators;
 
@@ -19,9 +17,7 @@ namespace SmartManager.Domain.Entities {
         public Boolean IsBlocked => UnlockDate > DateTime.Now;
 
         protected User()
-        {
-         
-        }
+        {}
 
         public User(string? name, string? email, string? password, string? role = null)
         {
@@ -75,7 +71,7 @@ namespace SmartManager.Domain.Entities {
                     _errors.Add(error.ErrorMessage);
                 }
 
-                throw new DomainException("Campos Inv�lidos" + _errors[0]);
+                throw new DomainException("Campos Inválidos" + _errors[0]);
             }
 
             return true;

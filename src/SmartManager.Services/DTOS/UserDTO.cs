@@ -13,7 +13,7 @@ namespace SmartManager.Services.DTOS
         public string ?Password { get;  set; } 
 
         [JsonIgnore]
-        public string ?Role { get;  set; } 
+        public string ?Role { get; private set; } 
 
        [JsonIgnore]
         public int ?AccessAttempts { get; private set; } 

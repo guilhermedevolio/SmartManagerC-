@@ -29,9 +29,8 @@ namespace SmartManager.Services.Services
 
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
         {
-            var UserDTO = _mapper.Map<User>(request);
 
-            var user = await _repository.GetByEmail(UserDTO.Email);
+            var user = await _repository.GetByEmail(request.Email);
 
             if(user == null) {
                 throw new DomainException("Usuário não encontrado com o email informado");
@@ -41,11 +40,9 @@ namespace SmartManager.Services.Services
                 throw new DomainException("Conta bloqueada, tente novamente " + user.UnlockDate);
             }
 
-           
 
             if(request.Password == user.Password) {
-                var token = _tokenService.GenerateToken(_mapper.Map<UserDTO>(request));
-
+                var token = _tokenService.GenerateToken(user);
                 return new AuthenticateResponse(0, token);
             }
 

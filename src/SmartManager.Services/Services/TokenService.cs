@@ -1,4 +1,6 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using SmartManager.Domain.Entities;
 using SmartManager.Services.DTOS;
 using SmartManager.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,19 +12,27 @@ namespace SmartManager.Services.Services
 {
     public class TokenService : ITokenService
     {
-        public string GenerateToken(UserDTO user)
+
+        private readonly IConfiguration _configuration;
+
+        public TokenService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        public string GenerateToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             
-            var expiresAt = DateTime.UtcNow.AddHours(2);
+            var expiresAt = DateTime.UtcNow.AddHours(Int32.Parse(_configuration["Auth:Jwt:expiresHours"]));
 
-            var key = Encoding.ASCII.GetBytes("108923718923679781263791623789126378916837612873651825385");
+            var key = Encoding.ASCII.GetBytes(_configuration["Auth:Jwt:key"]);
 
             var tokenInfo = new Microsoft.IdentityModel.Tokens.SecurityTokenDescriptor()
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                   new Claim(ClaimTypes.Name, user.Email),
+                   new Claim(JwtRegisteredClaimNames.Name, user.Email),
                    new Claim(ClaimTypes.Role, user.Role)
                 }),
 
