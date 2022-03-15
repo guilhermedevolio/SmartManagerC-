@@ -29,5 +29,22 @@ namespace SmartManager.API.Controllers
                 });
             }   
         }
+
+        [HttpPost]
+        [Route("refresh-token")]
+        public async Task<IActionResult> refreshToken([FromBody] RefreshTokenRequest request) {
+            try {
+                var token = await _service.RefreshToken(request);
+                return Ok(new {
+                    Status = 0,
+                    RefreshTokenUsed = token
+                });
+            } catch (DomainException ex) {
+                return Unauthorized(new {
+                    Status = 1,
+                    Message = ex.Message
+                });
+            }
+        }
     }
 }
