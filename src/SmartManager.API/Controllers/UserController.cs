@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartManager.Core.Exceptions;
 using SmartManager.Services.DTOS;
@@ -41,6 +42,7 @@ namespace SmartManager.API.Controllers
 
         [HttpPost]
         [Route("create")]
+        [Authorize]
         public async Task<IActionResult> create(createUserRequest request) {
             var userDTO = _mapper.Map<UserDTO>(request);
 

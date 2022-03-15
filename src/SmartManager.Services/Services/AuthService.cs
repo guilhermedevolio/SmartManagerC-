@@ -31,7 +31,6 @@ namespace SmartManager.Services.Services
 
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
         {
-
             var user = await _repository.GetByEmail(request.Email);
 
             if(user == null) {

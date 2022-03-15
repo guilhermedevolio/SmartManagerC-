@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4xpT+KlRd95JLeUxF1GGrXgjsPYSzXwFLL/bUkA/qL45yYFnnSLlj41brplt3BVAF3EW6siqh9gSASqqeCBR/g==",
+  "dgSpecHash": "EJGNpgSdFcSbLK1OCzv1CCX2NQxDC1oqZPyViXUivRpqBkdTJpQtCnu63ZrH0cFNUyW95QEwwD012oiZxHnRNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.API\\SmartManager.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guilherme\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.3\\microsoft.aspnetcore.authentication.jwtbearer.6.0.3.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
@@ -23,6 +24,8 @@
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.16.0\\microsoft.identitymodel.jsonwebtokens.6.16.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.identitymodel.logging\\6.16.0\\microsoft.identitymodel.logging.6.16.0.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.16.0\\microsoft.identitymodel.tokens.6.16.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
