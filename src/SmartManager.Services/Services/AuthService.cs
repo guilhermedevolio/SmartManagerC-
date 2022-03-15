@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using SmartManager.API.Response;
@@ -14,17 +15,18 @@ namespace SmartManager.Services.Services
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _repository;
+        private readonly IRefreshTokenRepository _TokenRepository;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
-
         private readonly IConfiguration _config;
 
-        public AuthService(IUserRepository repository, IMapper mapper, ITokenService tokenService, IConfiguration config)
+        public AuthService(IUserRepository repository, IMapper mapper, ITokenService tokenService, IConfiguration config, IRefreshTokenRepository tokenRepository)
         {
             _repository = repository;
             _mapper = mapper;
             _tokenService = tokenService;
             _config = config;
+            _TokenRepository = tokenRepository;
         }
 
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
@@ -43,7 +45,16 @@ namespace SmartManager.Services.Services
 
             if(request.Password == user.Password) {
                 var token = _tokenService.GenerateToken(user);
-                return new AuthenticateResponse(0, token);
+
+                var refreshEntityToken = new Entities.RefreshToken{
+                    Token = _tokenService.GenerateRefreshToken(),
+                    Expires = DateTime.UtcNow.AddHours(10),
+                    UserId = user.Id
+                };
+
+                var refreshToken = await _TokenRepository.Create(refreshEntityToken);
+     
+                return new AuthenticateResponse(0, token, refreshToken.Token);
             }
 
             var attemps = user.AccessAttempts;
@@ -67,6 +78,30 @@ namespace SmartManager.Services.Services
             
             throw new DomainException("Senha incorreta");
 
+        }
+
+        public async Task<RefreshTokenResponse> RefreshToken(RefreshTokenRequest tokenPayload) {
+            var token = tokenPayload.Token;
+
+            var refreshToken = await _TokenRepository.getToken(token);
+
+            if(refreshToken == null) {
+                throw new DomainException("O Token informado não existe");
+            }
+
+            if(refreshToken.IsActive){
+                refreshToken.Revoked = DateTime.UtcNow;
+                await _TokenRepository.Update(refreshToken);
+
+                var jwtToken = _tokenService.GenerateToken(refreshToken.User);
+
+                return new RefreshTokenResponse() {
+                    RevokedToken = refreshToken.Token,
+                    AccessToken = jwtToken
+                };
+            }
+                
+            throw new DomainException("O Token informado não é mais válido!");
         }
     }
 }

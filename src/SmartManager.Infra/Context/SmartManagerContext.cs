@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SmartManager.Domain.Entities;
+using SmartManager.Entities;
 using SmartManager.Infra.Mappings;
 
 namespace SmartManager.Infra.Context
@@ -19,6 +20,7 @@ namespace SmartManager.Infra.Context
 
 
         public virtual DbSet<User> Users {get; set;}
+        public virtual DbSet<RefreshToken> RefreshTokens {get; set;}
 
         protected override void OnModelCreating(ModelBuilder builder) {
             builder.ApplyConfiguration(new UserMap());

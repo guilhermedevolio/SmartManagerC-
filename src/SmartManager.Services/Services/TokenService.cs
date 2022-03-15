@@ -5,6 +5,7 @@ using SmartManager.Services.DTOS;
 using SmartManager.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 
@@ -42,6 +43,18 @@ namespace SmartManager.Services.Services
 
             var token = tokenHandler.CreateToken(tokenInfo);
             return tokenHandler.WriteToken(token);
+        }
+
+        public string GenerateRefreshToken() {
+            using(RandomNumberGenerator rng = new RNGCryptoServiceProvider())
+            {
+                byte[] tokenData = new byte[32];
+                rng.GetBytes(tokenData);
+
+                string token = Convert.ToBase64String(tokenData);
+
+                return token;
+            }
         }
     }
 }

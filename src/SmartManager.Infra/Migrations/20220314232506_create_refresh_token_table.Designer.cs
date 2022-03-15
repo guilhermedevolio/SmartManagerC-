@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartManager.Infra.Context;
 
@@ -11,9 +12,10 @@ using SmartManager.Infra.Context;
 namespace SmartManager.Infra.Migrations
 {
     [DbContext(typeof(SmartManagerContext))]
-    partial class SmartManagerContextModelSnapshot : ModelSnapshot
+    [Migration("20220314232506_create_refresh_token_table")]
+    partial class create_refresh_token_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,7 +87,7 @@ namespace SmartManager.Infra.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<long>("UserId")
+                    b.Property<long?>("UserId")
                         .HasColumnType("BIGINT");
 
                     b.HasKey("Id");
@@ -97,13 +99,9 @@ namespace SmartManager.Infra.Migrations
 
             modelBuilder.Entity("SmartManager.Entities.RefreshToken", b =>
                 {
-                    b.HasOne("SmartManager.Domain.Entities.User", "User")
+                    b.HasOne("SmartManager.Domain.Entities.User", null)
                         .WithMany("RefreshTokens")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("SmartManager.Domain.Entities.User", b =>

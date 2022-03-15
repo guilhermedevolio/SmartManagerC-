@@ -6,5 +6,6 @@ namespace SmartManager.Services.Interfaces
 {
     public interface IAuthService {
         Task<AuthenticateResponse> Authenticate(AuthenticateRequest request);
+        Task<RefreshTokenResponse> RefreshToken(RefreshTokenRequest tokenPayload);
     }
 }

@@ -1,5 +1,6 @@
 using SmartManager.Core.Exceptions;
 using SmartManager.Domain.Validators;
+using SmartManager.Entities;
 
 namespace SmartManager.Domain.Entities {
     public class User : Base {
@@ -15,6 +16,8 @@ namespace SmartManager.Domain.Entities {
         public DateTime ?UnlockDate { get; private set; }
 
         public Boolean IsBlocked => UnlockDate > DateTime.Now;
+
+        public List<RefreshToken> ?RefreshTokens {get; set;}
 
         protected User()
         {}
