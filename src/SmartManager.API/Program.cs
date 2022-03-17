@@ -11,6 +11,7 @@ using SmartManager.Services.Requests;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using SmartManager.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +49,8 @@ var autoMapperConfig = new MapperConfiguration(cfg =>
     cfg.CreateMap<UserDTO, createUserRequest>().ReverseMap();
     cfg.CreateMap<UserDTO, AuthenticateRequest>().ReverseMap();
     cfg.CreateMap<User, AuthenticateRequest>().ReverseMap();
+    cfg.CreateMap<Product, CreateProductRequest>().ReverseMap();
+    cfg.CreateMap<Product, UpdateProductRequest>().ReverseMap();
 });
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
@@ -57,6 +60,8 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 
 

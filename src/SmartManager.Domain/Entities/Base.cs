@@ -5,6 +5,8 @@ namespace SmartManager.Domain.Entities
     public abstract class Base {
         public long Id { get; set; }
 
+        public DateTime CreatedAt = DateTime.UtcNow;
+
         public List<String> _errors;
 
         public bool IsValid => _errors.Count > 0;

@@ -22,6 +22,11 @@ namespace SmartManager.Infra.Context
         public virtual DbSet<User> Users {get; set;}
         public virtual DbSet<RefreshToken> RefreshTokens {get; set;}
 
+        public virtual DbSet<Product> Products {get; set;}
+
+        public virtual DbSet<ProductCategory> Categories {get; set;}
+
+
         protected override void OnModelCreating(ModelBuilder builder) {
             builder.ApplyConfiguration(new UserMap());
         }

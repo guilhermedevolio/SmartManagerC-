@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using SmartManager.Domain.Entities;
 using SmartManager.Infra.Context;
@@ -50,5 +51,21 @@ namespace SmartManager.Infra.Repositories
                             .ToListAsync();
             return obj;
         }
+
+        public virtual async Task<T> FindByExpression(
+            Expression<Func<T, bool>> expression,
+            bool asNoTracking = true)
+                => asNoTracking
+                ? await BuildQuery(expression)
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync()
+
+                : await BuildQuery(expression)
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync();
+
+        private IQueryable<T> BuildQuery(Expression<Func<T, bool>> expression)
+            => _context.Set<T>().Where(expression);
+
     }
 }
