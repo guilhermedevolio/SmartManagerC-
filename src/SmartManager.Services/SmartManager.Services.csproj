@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <PackageReference Include="automapper" Version="11.0.1" />
+    <PackageReference Include="LinqKit" Version="1.2.2" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.16.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
   </ItemGroup>

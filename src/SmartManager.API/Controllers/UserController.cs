@@ -1,6 +1,8 @@
+using System.IdentityModel.Tokens.Jwt;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SmartManager.API.Response;
 using SmartManager.Core.Exceptions;
 using SmartManager.Services.DTOS;
 using SmartManager.Services.Interfaces;
@@ -24,6 +26,7 @@ namespace SmartManager.API.Controllers
 
         [HttpGet]
         [Route("get-by-email")]
+        [Authorize]
         public async Task<IActionResult> getByEmail([FromQuery] string email) {
             var user = await _service.SearchByEmail(email);
 
@@ -38,6 +41,20 @@ namespace SmartManager.API.Controllers
                 Status = 0,
                 user
             });
+        }
+
+        [HttpGet]
+        [Route("authenticated-user")]
+        [Authorize]
+        public  async Task<IActionResult> getAuthenticatedUser() {
+             string email = User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Name).Value;
+
+             var user = await _service.SearchByEmail(email);
+
+             return Ok(new {
+                 Status = 0,
+                 user = user
+             });
         }
 
         [HttpPost]
@@ -60,8 +77,41 @@ namespace SmartManager.API.Controllers
                     Message = ex.Message
                 });
             }
+        }
 
+        [HttpGet]
+        [Route("get-all")]
+        [Authorize]
+        public async Task<IActionResult> getAllUsers() {
+            try {
+                var users = await _service.GetAllAsync();
 
+                return Ok(new {
+                    Status = 0,
+                    Users = users
+                });
+
+            } catch (DomainException ex) {
+                return Ok(new {
+                    Status = 1,
+                    Message = ex.Message
+                });
+            }
+        }
+
+        [HttpPost]
+        [Route("advanced-search")]
+        public async Task<IActionResult> advancedSearch(UserSearchFilter filter) {
+            try {
+                var users = await _service.AdvancedSearch(filter);
+
+                  return Ok(new {
+                    Status = 0,
+                    Users = users
+                });
+            } catch (DomainException ex) {
+                return BadRequest(Responses.DomainErrorMessage(ex.Message, ex.GetErrors));
+            }
         }
     }
 }

@@ -79,6 +79,16 @@ namespace SmartManager.Services.Services
 
         }
 
+        public Boolean ValidateToken(string token) {
+            var validate = _tokenService.ValidateToken(token);
+
+            if(!validate) {
+                throw new Exception("O token informado é inválido");
+            }
+
+            return true;
+        }
+
         public async Task<RefreshTokenResponse> RefreshToken(RefreshTokenRequest tokenPayload) {
             var token = tokenPayload.Token;
 

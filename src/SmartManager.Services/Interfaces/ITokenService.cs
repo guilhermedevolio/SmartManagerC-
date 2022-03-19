@@ -6,6 +6,8 @@ namespace SmartManager.Services.Interfaces
 {
     public interface ITokenService {
         String GenerateToken(User user);
+        Boolean ValidateToken(string token);
+
         String GenerateRefreshToken();
     }
 }
