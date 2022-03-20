@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using SmartManager.Entities;
 
 namespace SmartManager.Services.DTOS
 {
@@ -15,11 +16,13 @@ namespace SmartManager.Services.DTOS
         [JsonIgnore]
         public string ?Role { get; private set; } 
 
-       [JsonIgnore]
+        [JsonIgnore]
         public int ?AccessAttempts { get; private set; } 
 
-       [JsonIgnore]
+        [JsonIgnore]
         public DateTime ?UnlockDate { get; private set; }
+
+        public ICollection<RefreshToken> ?RefreshTokens {get; set;}
 
         public UserDTO()
         {}

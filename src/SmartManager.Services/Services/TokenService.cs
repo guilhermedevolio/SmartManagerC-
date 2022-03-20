@@ -70,10 +70,10 @@ namespace SmartManager.Services.Services
             };
         }
 
-        public string GenerateRefreshToken() {
+        public string GenerateRandomToken(int size) {
             using(RandomNumberGenerator rng = new RNGCryptoServiceProvider())
             {
-                byte[] tokenData = new byte[32];
+                byte[] tokenData = new byte[size];
                 rng.GetBytes(tokenData);
 
                 string token = Convert.ToBase64String(tokenData);

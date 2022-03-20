@@ -19,7 +19,7 @@ namespace SmartManager.Entities
         public long CategoryId { get; set; }
 
         public Product() {
-                 _errors = new List<String>();
+            _errors = new List<String>();
         }
 
         public Product(string name, string description, int unitPrice, int quantity, int status, ProductCategory category)

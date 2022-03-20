@@ -31,7 +31,9 @@ namespace SmartManager.Infra.Mappings
             builder.Property(x => x.Revoked)
                    .IsRequired()
                    .HasColumnName("Revoked")
-                   .HasColumnType("DATETIME");    
+                   .HasColumnType("DATETIME");
+
+           builder.HasOne(x => x.User);            
 
         }
     }

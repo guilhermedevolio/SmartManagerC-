@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using SmartManager.Core.Exceptions;
 using SmartManager.Domain.Validators;
 using SmartManager.Entities;
@@ -17,10 +18,12 @@ namespace SmartManager.Domain.Entities {
 
         public Boolean IsBlocked => UnlockDate > DateTime.Now;
 
-        public List<RefreshToken> ?RefreshTokens {get; set;}
+        public ICollection<RefreshToken> ?RefreshTokens {get; set;}
 
         protected User()
-        {}
+        {
+             _errors = new List<String>();
+        }
 
         public User(string? name, string? email, string? password, string? role = null)
         {

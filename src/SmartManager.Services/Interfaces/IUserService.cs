@@ -7,6 +7,6 @@ namespace SmartManager.Services.Interfaces
         Task<UserDTO> SearchByEmail(string email); 
         Task<List<UserDTO>> GetAllAsync(); 
         Task<UserDTO> CreateAsync(UserDTO userDTO); 
-        Task<List<UserDTO>> AdvancedSearch(UserSearchFilter filter); 
+        Task<ICollection<UserDTO>> AdvancedSearch(UserSearchFilter filter); 
     }
 }

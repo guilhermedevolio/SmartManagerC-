@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using AutoMapper;
 using LinqKit;
 using Microsoft.IdentityModel.Tokens;
@@ -15,11 +16,13 @@ namespace SmartManager.Services.Services
     {
         private readonly IUserRepository _repository;
         private readonly IMapper _mapper;
+        private readonly ITokenService _tokenService;
 
-        public UserService(IUserRepository repository, IMapper mapper)
+        public UserService(IUserRepository repository, IMapper mapper, ITokenService tokenService)
         {
             _repository = repository;
             _mapper = mapper;
+            _tokenService = tokenService;
         }
 
         public async Task<UserDTO> SearchByEmail(string email)
@@ -36,6 +39,10 @@ namespace SmartManager.Services.Services
                 throw new DomainException("O email informado já existe");
             }
 
+            if(string.IsNullOrEmpty(userDTO.Password)) {
+                userDTO.Password = _tokenService.GenerateRandomToken(5);
+            }
+
             var createUser = await _repository.Create(_mapper.Map<User>(userDTO));
             
             return _mapper.Map<UserDTO>(createUser);
@@ -48,7 +55,7 @@ namespace SmartManager.Services.Services
             return _mapper.Map<List<UserDTO>>(users);
         }
 
-        public async Task<List<UserDTO>> AdvancedSearch(UserSearchFilter filter)
+        public async Task<ICollection<UserDTO>> AdvancedSearch(UserSearchFilter filter)
         {
             var pb = PredicateBuilder.New<User>(true);
 
@@ -60,9 +67,13 @@ namespace SmartManager.Services.Services
                 pb = pb.And(p => p.Email == filter.Email);
             }
 
+            if(!filter.Role.IsNullOrEmpty()) {
+                pb = pb.And(p => p.Role == filter.Role);
+            }
+
             var search = await _repository.AdvancedSearch(pb);
 
-            return  _mapper.Map<List<UserDTO>>(search);
+            return  _mapper.Map<ICollection<UserDTO>>(search);
         }
     }
 }

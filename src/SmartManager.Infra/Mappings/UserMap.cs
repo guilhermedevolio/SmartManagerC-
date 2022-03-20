@@ -53,6 +53,7 @@ namespace SmartManager.Infra.Mappings
                    .HasColumnName("unlock_date")
                    .HasColumnType("datetime");
 
+              builder.HasMany(x => x.RefreshTokens);
         }
     }
 }

@@ -2,13 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\SmartManager.Infra\\Context",
-    "\\src\\SmartManager.Infra\\Interfaces",
-    "\\src\\SmartManager.Infra\\Migrations",
-    "\\src\\SmartManager.Infra\\Repositories",
+    "\\src\\SmartManager.Domain",
+    "\\src\\SmartManager.Domain\\Entities",
     "\\src\\SmartManager.Services",
-    "\\src\\SmartManager.Services\\Interfaces"
+    "\\src\\SmartManager.Services\\Requests"
   ],
-  "SelectedNode": "\\src\\SmartManager.Services\\Interfaces\\IUserInterface.cs",
   "PreviewInSolutionExplorer": false
 }

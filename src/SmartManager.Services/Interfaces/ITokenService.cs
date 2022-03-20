@@ -8,6 +8,6 @@ namespace SmartManager.Services.Interfaces
         String GenerateToken(User user);
         Boolean ValidateToken(string token);
 
-        String GenerateRefreshToken();
+        String GenerateRandomToken(int size);
     }
 }

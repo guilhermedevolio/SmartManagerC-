@@ -29,7 +29,6 @@ namespace SmartManager.Infra.Repositories
         public async Task<User> GetByEmail(string email) {
             var user = await _context.Users
                                 .Where(x => x.Email == email)
-                                .AsNoTracking()
                                 .ToListAsync();
                                 
             return user.FirstOrDefault();                    

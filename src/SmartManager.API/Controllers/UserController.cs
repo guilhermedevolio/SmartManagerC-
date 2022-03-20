@@ -26,7 +26,6 @@ namespace SmartManager.API.Controllers
 
         [HttpGet]
         [Route("get-by-email")]
-        [Authorize]
         public async Task<IActionResult> getByEmail([FromQuery] string email) {
             var user = await _service.SearchByEmail(email);
 

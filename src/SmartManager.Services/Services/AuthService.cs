@@ -46,7 +46,7 @@ namespace SmartManager.Services.Services
                 var token = _tokenService.GenerateToken(user);
 
                 var refreshEntityToken = new Entities.RefreshToken{
-                    Token = _tokenService.GenerateRefreshToken(),
+                    Token = _tokenService.GenerateRandomToken(32),
                     Expires = DateTime.UtcNow.AddHours(10),
                     UserId = user.Id
                 };

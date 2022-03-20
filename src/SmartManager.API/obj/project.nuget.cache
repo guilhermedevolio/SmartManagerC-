@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UCqH0ya8EMu3OJUbjnHU6kYNA2SkNEYSNs9gtDScf8BZfrI46wpbhDUuSCaYOCiZkoom2IOId5wm+bRbKF01tg==",
+  "dgSpecHash": "IGIA91K7KOjhNMqGxY+G1LN95uXMHk0CIDJionNzzrvuuO7S4A0xNeDDmO18hMRDAWDGecDmslnkXddowKNoQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\SmartManager\\src\\SmartManager.API\\SmartManager.API.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\Guilherme\\.nuget\\packages\\linqkit.core\\1.2.2\\linqkit.core.1.2.2.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\linqkit.microsoft.entityframeworkcore\\6.1.2\\linqkit.microsoft.entityframeworkcore.6.1.2.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.3\\microsoft.aspnetcore.authentication.jwtbearer.6.0.3.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.3\\microsoft.aspnetcore.jsonpatch.6.0.3.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.3\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.3.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
@@ -36,6 +38,8 @@
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.win32.registry\\4.6.0\\microsoft.win32.registry.4.6.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.win32.systemevents\\4.6.0\\microsoft.win32.systemevents.4.6.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.6.0\\runtime.native.system.data.sqlclient.sni.4.6.0.nupkg.sha512",
     "C:\\Users\\Guilherme\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
