@@ -1,6 +1,6 @@
 # SmartManager
-Smart Manager is a simply very fast ERP
-This project is for managing Customers, Invoices and linking Invoices with a dynamic gateway configuration for generating payable links
+Smart Manager is a simply very fast ERP <br>
+This project is for managing Customers, Invoices and linking Invoices with a dynamic gateway configuration for generating payable links <br>
 The project was thought to be something modular, to adapt to the type of company that hires
 # Technology
 <p>Backend: </p>
